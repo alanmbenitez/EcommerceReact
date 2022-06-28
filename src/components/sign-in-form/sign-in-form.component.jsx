@@ -1,10 +1,11 @@
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import {
     signInWithGooglePopup,
     createUserDocumentFromAuth,
-    signInAuthUserWithEmailAndPassword
+    signInAuthUserWithEmailAndPassword,
+    signOutUser
     /*     signInWithGoogleRedirect */
 } from '../../utils/firebase/firebase.utils'
 
@@ -12,6 +13,7 @@ import Button from '../button/button.component'
 import FormInput from '../form-input/form-input.componente'
 import './sign-in.styles.scss'
 
+import { UserContext } from '../../contexts/user.context'
 
 const defaultFormFields = {
     email: '',
@@ -25,6 +27,8 @@ const SignInForm = () => {
 
     const { email, password } = formFields
 
+    const {  currentUser } = useContext(UserContext)
+
 
     //reset inputs
     const resetFormField = () => {
@@ -37,8 +41,9 @@ const SignInForm = () => {
         event.preventDefault()
 
         try {
-            const response = await signInAuthUserWithEmailAndPassword(email,password)
-           console.log(response);
+            const {user} = await signInAuthUserWithEmailAndPassword(email,password)
+           
+            /* setCurrentUser(user) */
             resetFormField()
 
         } catch (error) {
@@ -60,12 +65,14 @@ const SignInForm = () => {
     }
 
     const logGoogleUser = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user)
+        await signInWithGooglePopup();
+        /* setCurrentUser(user) */
+       
     }
+  
 
 
-    return (
+    return !currentUser ? (
         <div className='sign-up-container' >
             <h2>already have an account</h2>
             <span>Sing in with your email</span>
@@ -98,7 +105,9 @@ const SignInForm = () => {
 
             </form>
         </div>
-    )
+    ) : (<div className='buttons-container'>
+    <Button type='button' onClick={signOutUser} buttonType='google'>Sign Out</Button>
+</div>)
 }
 
 export default SignInForm
