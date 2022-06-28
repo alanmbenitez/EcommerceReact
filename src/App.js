@@ -18,12 +18,6 @@ const App = () => {
           <Route path='shop' element={<Shop />} />
           <Route path='auth' element={<Authentication />} />
         </Route>
-      
-     {/*  <Route path='/' element={<Navigation />}>
-        <Route path='home' element={<Home />}>
-          <Route index element={<Shop />} />
-        </Route>
-      </Route> */}
     </Routes>
   );
 }

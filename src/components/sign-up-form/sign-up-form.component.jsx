@@ -20,8 +20,7 @@ const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields)
 
     const { displayName, email, password, confirmPassword } = formFields
-/* 
-    const {setCurrentUser} = useContext(UserContext) */
+
 
     
 
@@ -39,10 +38,9 @@ const SignUpForm = () => {
             return;
         }
         try {
-            //register new user
+          
             const { user } = await createAuthUserWithEmailAndPassword(email, password);
-           /*  setCurrentUser(user) */
-            // save firebase store
+           
             await createUserDocumentFromAuth(user, { displayName })
             resetFormField()
 

@@ -1,4 +1,3 @@
-import { signInWithEmailAndPassword } from 'firebase/auth'
 import React from 'react'
 import { useState, useContext } from 'react'
 import {
@@ -6,7 +5,6 @@ import {
     createUserDocumentFromAuth,
     signInAuthUserWithEmailAndPassword,
     signOutUser
-    /*     signInWithGoogleRedirect */
 } from '../../utils/firebase/firebase.utils'
 
 import Button from '../button/button.component'
@@ -43,7 +41,6 @@ const SignInForm = () => {
         try {
             const {user} = await signInAuthUserWithEmailAndPassword(email,password)
            
-            /* setCurrentUser(user) */
             resetFormField()
 
         } catch (error) {
@@ -66,7 +63,6 @@ const SignInForm = () => {
 
     const logGoogleUser = async () => {
         await signInWithGooglePopup();
-        /* setCurrentUser(user) */
        
     }
   

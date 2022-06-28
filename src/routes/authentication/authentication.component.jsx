@@ -4,21 +4,6 @@ import './authentication.styles.scss'
 
 
 const Authentication = () => {
-
-
-    /* useEffect( () => {
-        const googleResult = async()=>{
-            const response = await getRedirectResult(auth);
-            if (response) {
-               const userDocRef = await createUserDocumentFromAuth(response.user)
-            }
-        }
-        googleResult()
-        
-    }, []) */
-
-
-    
     return (
         <div className='auth-container'>
             <SignInForm/>

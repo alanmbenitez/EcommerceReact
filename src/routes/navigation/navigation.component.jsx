@@ -13,7 +13,7 @@ const Navigation = () => {
     const { isCartOpen } = useContext(CartContext)
 
  
-
+   
 
     return (
         <Fragment>
