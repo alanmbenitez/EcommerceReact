@@ -7,8 +7,8 @@ import {
     signOutUser
 } from '../../utils/firebase/firebase.utils'
 
-import Button from '../button/button.component'
 import FormInput from '../form-input/form-input.componente'
+import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component'
 import './sign-in.styles.scss'
 
 import { UserContext } from '../../contexts/user.context'
@@ -95,14 +95,14 @@ const SignInForm = () => {
                 />
             <div className='buttons-container'>
                 <Button type='submit'>Sign In</Button>
-                <Button type='button' onClick={logGoogleUser} buttonType='google'>Sign in with Google Popfdup</Button>
+                <Button type='button' onClick={logGoogleUser} buttonType={BUTTON_TYPE_CLASSES.google}>Sign in with Google</Button>
             </div>
                 
 
             </form>
         </div>
     ) : (<div className='buttons-container'>
-    <Button type='button' onClick={signOutUser} buttonType='google'>Sign Out</Button>
+    <Button type='button' onClick={signOutUser} buttonType={BUTTON_TYPE_CLASSES.google}>Sign Out</Button>
 </div>)
 }
 
