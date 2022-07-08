@@ -11,13 +11,7 @@ export const CategoriesContext = createContext({
 export const CategoriesProvider = ({ children }) => {
     const [categories, setCategories] = useState({})
 
-    useEffect(()=>{
-        const getCategoriesMap = async () => {
-            const categoryMap= await getCategoriesAndDocuments();
-            setCategories(categoryMap)
-        }
-        getCategoriesMap()
-    },[])
+
 
 ///SOLO SE EJECUTA UNAVEX
 /*     useEffect(() => {
