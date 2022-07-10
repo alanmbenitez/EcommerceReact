@@ -2,6 +2,7 @@ import { Fragment, useContext } from "react";
 import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom"
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg'
+import { ReactComponent as CrownName } from '../../assets/name_crown.svg'
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import CartIcon from "../../components/cart-icon/cart-icon.components";
 import { UserContext } from "../../contexts/user.context";
@@ -24,6 +25,7 @@ const Navigation = () => {
             <NavigationContainer>
                 <LogoContainer to='/'>
                     <CrownLogo className="logo" />
+                    <CrownName className="logo"/>
                 </LogoContainer>
                 <NavLinks>
                     <NavLink to='/'>

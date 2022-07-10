@@ -6,6 +6,7 @@ export const CartIconContainer = styled.div`
   height: 45px;
   position: relative;
   display: flex;
+  color: #ffffff;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -13,8 +14,8 @@ export const CartIconContainer = styled.div`
 
 
  export const ShoppingIconStyle = styled(ShoppingIcon)`
-    width: 24px;
-    height: 24px;
+    width: 33px;
+    height: 33px;
  `
 
 export const ItemCount = styled.span`
