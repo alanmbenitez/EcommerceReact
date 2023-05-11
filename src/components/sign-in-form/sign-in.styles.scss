@@ -2,11 +2,14 @@
   display: flex;
   flex-direction: column;
   width: 380px;
+  span {
+    color: #DEBA24;
+  }
 }
 
 h2{
-  margin: 10px 0
-  ;
+  margin: 10px 0;
+  color: #DEBA24;
 }
 
 .buttons-container {

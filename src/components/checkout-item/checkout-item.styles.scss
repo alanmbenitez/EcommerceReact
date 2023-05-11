@@ -22,6 +22,7 @@
     .price,
     .total-price {
       width: 23%;
+      color: #DEBA24;
       text-align: center;
     }
   
@@ -31,6 +32,7 @@
   
       .arrow {
         cursor: pointer;
+        color: white;
       }
   
       .value {
@@ -40,6 +42,7 @@
   
     .remove-button {
       padding-left: 12px;
+      color: #de4724;
       cursor: pointer;
     }
   }

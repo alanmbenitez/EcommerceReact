@@ -7,57 +7,64 @@ export const BackgroundImage = styled.div`
   background-size: cover;
   background-position: center;
   background-image: ${({imageUrl}) => `url(${imageUrl})`};
+  transition: transform 0.8s ease-in-out;
 `
 
 export const Body = styled.div`
-  height: 20%;
-  width: 25%;
+  height: 0;
+  width: 100%;
   padding: 0 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-  background-color: white;
-  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
   position: absolute;
+  bottom: 0;
+  transition: all 0.5s ease-in-out;
 
   h2 {
     font-weight: bold;
     margin: 0 6px 0;
     font-size: 22px;
-    color: #4a4a4a;
+    color: #ffffff;
     text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
   }
+
   p {
     font-weight: lighter;
     font-size: 16px;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
   }
-
 `
-
 
 export const DirectoryItemContainer = styled(Link)`
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: none;
+  border-radius: 10px;
   margin: 0 7.5px 15px;
   overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   
   &:hover {
     cursor: pointer;
   
     & ${BackgroundImage} {
-  transform: scale(1.1);
-  transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      transform: scale(1.1);
     }
   
     & ${Body} {
-  opacity: 0.9;
+      height: 50%;
+      opacity: 0.85;
     }
   }
 
@@ -69,7 +76,3 @@ export const DirectoryItemContainer = styled(Link)`
     margin-left: 7.5px;
   }
 `
-
-
-
-

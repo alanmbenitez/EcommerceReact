@@ -2,37 +2,66 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 export const NavigationContainer = styled.div`
-  height: 70px;
+  height: 80px;
   width: 100%;
-  padding-right: 5%;
+  padding: 0 5%;
   display: flex;
-  padding-left: 5%;
   justify-content: space-between;
-  margin-bottom: 25px;
-  background-color: #3D464D 
+  align-items: center;
+  background-color: #1F2833;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
 `
-
 
 export const LogoContainer = styled(Link)`
   height: 100%;
-  justify-content: center;
-  width: 25%;
-  align-items: center;
+  width: 30%;
   display: flex;
-  padding: 35px;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+
+  .logo {
+    height: 60%;
+    padding: 0px 10px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `
 
 export const NavLinks = styled.div`
-  max-width: 50%;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex - end;
+  justify-content: flex-end;
 `
-export const NavLink  = styled(Link)`
-  padding: 10px 15px;
+
+export const NavLink = styled(Link)`
+  padding: 0px 15px;
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
-`
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  
+  &:hover {
+    color: #DEBA24;
 
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #DEBA24;
+    transition: all 0.3s ease-in-out;
+  }
+`
